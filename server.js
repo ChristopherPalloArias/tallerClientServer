@@ -6,10 +6,16 @@ const cors = require('cors');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
-const server = http.createServer(app);
-const io = socketIO(server);
+const corsOptions = {
+    origin: 'https://urchin-app-4llz3.ondigitalocean.app',
+    methods: ['GET', 'POST'],
+    credentials: true,
+  };
+  app.use(cors(corsOptions));
+  
+  const server = http.createServer(app);
+  const io = socketIO(server);
 
 const db = mysql.createConnection({
     host: 'mysql-christopherobin.alwaysdata.net',

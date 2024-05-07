@@ -8,7 +8,7 @@ function App() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io('http://tu-url-en-digitalocean');
+    const newSocket = io('https://urchin-app-4llz3.ondigitalocean.app/');
     setSocket(newSocket);
 
     return () => {

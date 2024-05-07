@@ -7,10 +7,10 @@ app.use(express.json());
 app.use(cors());
 
 const db = mysql.createConnection({
-    host: "mysql-christopherobin.alwaysdata.net",
-    user: "358042_admin",
-    password: "YqUZn6T6AxLYc5k",
-    database: "christopherobin_practiceclientserver"
+    host: "DB_HOST",
+    user: "DB_USER",
+    password: "DB_PASS",
+    database: "DB_NAME"
 })
 
 app.post('/login', (req, res) =>{

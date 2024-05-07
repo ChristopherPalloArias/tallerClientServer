@@ -8,8 +8,8 @@ function Login({ onLoginSuccess }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios.post('http://localhost:8081/login', { email, password })
-      .then(res => {
+    axios.post('https://clownfish-app-v8obt.ondigitalocean.app/login', { email, password })
+    .then(res => {
         console.log(res);
         if (res.data === "Login Successfully") {
           onLoginSuccess();

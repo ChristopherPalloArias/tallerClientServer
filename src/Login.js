@@ -8,7 +8,7 @@ function Login({ onLoginSuccess }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios.post('https://serverlogin-app-caxs7.ondigitalocean.app/', { email, password })
+    axios.post('http://localhost:8081/login', { email, password })
       .then(res => {
         console.log(res);
         if (res.data === "Login Successfully") {

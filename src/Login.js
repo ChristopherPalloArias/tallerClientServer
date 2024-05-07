@@ -8,7 +8,7 @@ function Login({ onLoginSuccess }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios.post('https://urchin-app-4llz3.ondigitalocean.app/login', { email, password })
+    axios.post('https://serverlogin-app-caxs7.ondigitalocean.app/', { email, password })
       .then(res => {
         console.log(res);
         if (res.data === "Login Successfully") {

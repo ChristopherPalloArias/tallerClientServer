@@ -1,12 +1,10 @@
 const express = require('express');
+const mysql = require('mysql');
+const cors = require('cors');
+
 const app = express();
-const http = require('http').createServer(app);
-const socketIO = require('socket.io')(http,{
-    cors:{
-        origin: "*"
-    }
-});
 app.use(express.json());
+app.use(cors());
 
 const db = mysql.createConnection({
     host: "mysql-christopherobin.alwaysdata.net",
@@ -32,9 +30,6 @@ app.get('/', (req, res) => {
     res.send('Server is running.....');
 });
 
-http.listen(8081, function (){
-    console.log("Listening..");
-    socketIO.on("Connection", function (socket){
-        console.log("User connected:"+socket.id); 
-    })
-});
+app.listen(8081, () =>{
+    console.log("Listening..")
+})

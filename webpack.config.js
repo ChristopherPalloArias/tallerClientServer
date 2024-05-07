@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: "./src/index.js",
   optimization: {
     minimize: false,
   },
@@ -14,7 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -35,7 +35,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js"],
   },
   devServer: {
     historyApiFallback: true,
